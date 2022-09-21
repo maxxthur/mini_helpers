@@ -46,7 +46,7 @@ na_summary <- function(x, group_by = NULL) {
       ggplot(aes(x = var, y = value)) +
       geom_col(fill = "steelblue") +
       labs(y = "number of NA") +
-      facet_wrap(form) +
+      facet_wrap(form, scales = "free_x") +
       theme_minimal() +
       theme(axis.text.x = element_text(angle = 45, face = "bold"),
             strip.text = element_text(face = "bold"))
