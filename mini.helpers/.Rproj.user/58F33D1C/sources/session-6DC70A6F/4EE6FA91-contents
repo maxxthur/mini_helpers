@@ -8,8 +8,7 @@
 #' @examples
 find_sqlite <- function(start_folder = getwd()) {
   # find
-  db_path <- list.files(start_folder, recursive = T) %>%
-    str_subset(".rsqlite3")
+  db_path <- str_subset(list.files(start_folder, recursive = T), ".rsqlite3")
   # result
   if(length(db_path) == 1) {
     m <- paste0("Connected to: ", db_path, ". Object: 'con'.")
