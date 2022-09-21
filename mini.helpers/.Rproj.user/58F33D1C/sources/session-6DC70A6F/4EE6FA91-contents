@@ -1,0 +1,27 @@
+#' Title
+#'
+#' @param start_folder
+#'
+#' @return
+#' @export
+#'
+#' @examples
+find_sqlite <- function(start_folder = getwd()) {
+  # find
+  db_path <- list.files(start_folder, recursive = T) %>%
+    str_subset(".rsqlite3")
+  # result
+  if(length(db_path) == 1) {
+    m <- paste0("Connected to: ", db_path, ". Object: 'con'.")
+    message(m)
+    con <<- dbConnect(SQLite(), db_path)
+  }
+  if(length(db_path) == 0) message("No database found.")
+  if(length(db_path) > 1) {
+
+    paths_string <- paste(db_path, collapse = ", ")
+
+    m <- paste0("More than one database found: ", paths_string)
+    message(m)
+  }
+}
