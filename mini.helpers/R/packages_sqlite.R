@@ -5,7 +5,7 @@
 #'
 #' @examples
 pkg_sqlite <- function() {
-  p_load("DBI",
+  pacman::p_load("DBI",
                  "RSQLite",
                  "tidyverse")
 }
