@@ -22,5 +22,18 @@ find_sqlite <- function(start_folder = getwd()) {
 
     m <- paste0("More than one database found: ", paths_string)
     message(m)
+
+    # ask to which db the user wants to connect
+
+    paths_df <- data.frame(id = 1:length(db_path), path = db_path) |>
+      dplyr::mutate(id = paste0(id, ": "))
+
+    choices <- paste(paste0(paths_df$id, paths_df$path), collapse = "\n")
+
+    q <- paste0("Connect to: \n", choices)
+
+    input <- as.integer(readline(q))
+
+    con <<- dbConnect(SQLite(), db_path[input])
   }
 }

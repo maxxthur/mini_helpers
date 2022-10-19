@@ -3,7 +3,7 @@
     "path": "~/GitHub/mini_helpers/mini.helpers/R/sqlite_find.R",
     "project_path": "R/sqlite_find.R",
     "type": "r_source",
-    "hash": "3321294810",
+    "hash": "0",
     "contents": "",
     "dirty": false,
     "created": 1663753797029.0,
@@ -17,11 +17,11 @@
         "scrollLine": "0"
     },
     "folds": "",
-    "lastKnownWriteTime": 1663754963,
+    "lastKnownWriteTime": 1666090869,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1663754963120,
+    "last_content_update": 1666090869,
     "read_only": false,
     "read_only_alternatives": []
 }
