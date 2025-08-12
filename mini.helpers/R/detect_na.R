@@ -1,12 +1,16 @@
-#' Title
+#' Detect Rows with NA Values
 #'
-#' @param x
+#' This function filters rows in a data frame that contain at least one NA value.
 #'
-#' @return
+#' @param x A data frame or tibble.
+#'
+#' @return A filtered data frame containing only rows with at least one NA.
 #' @export
 #'
 #' @examples
+#' df <- tibble::tibble(a = c(1, NA, 3), b = c(4, 5, NA))
+#' na_detect(df)
 na_detect <- function(x) {
-  x %>%
-    filter_all(any_vars(is.na(.)))
+  dplyr::filter(x, dplyr::if_any(dplyr::everything(), is.na))
 }
+
